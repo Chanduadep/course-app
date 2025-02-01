@@ -1,19 +1,24 @@
 Course Management Platform
+
 A simple MERN (MongoDB, Express, React, Node.js)Course Management Platform where users can register, log in, and manage courses.
 
 Features:
+
 Authentication System
+
 User registration and login
 Protected routes
 JWT-based authentication
 
 Course Management:
+
 Create new courses
 Edit existing courses
 Delete courses
 View course listings
 
 Technologies Used:
+
 Frontend: React, React Router, Axios, Tailwind CSS
 Backend: Node.js, Express, MongoDB, Mongoose, JWT
 
