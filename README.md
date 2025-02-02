@@ -2,76 +2,44 @@ Course Management Platform
 
 A simple MERN (MongoDB, Express, React, Node.js)Course Management Platform where users can register, log in, and manage courses.
 
-Features:
+Features
 
-Authentication System
-
-User registration and login
-
-Protected routes
-
-JWT-based authentication
+User Authentication (Register/Login)
 
 Course Management:
 
-Create new courses
+View all courses
+
+Add new courses
 
 Edit existing courses
 
 Delete courses
 
-View course listings
+Protected routes for authenticated users
+
+Responsive design
 
 Technologies Used:
 
 Frontend: React, React Router, Axios, Tailwind CSS
 
-Backend: Node.js, Express, MongoDB, Mongoose, JWT
+Backend: Node.js, Express, MongoDB with Mongoose, JWT for authentication , bcrypt for password hashing
 
-Project Structure:
+API Endpoints
 
-Frontend (React) Components
+Authentication
 
-Login.jsx - Allows users to log in and stores authentication tokens.
+POST /api/auth/register - Register a new user
 
-Register.jsx - Handles user registration.
+POST /api/auth/login - Login user
 
-CourseList.jsx - Fetches and displays the list of available courses.
+Courses
 
-CourseForm.jsx - A form to create a new course.
+GET /api/courses - Get all courses
 
-CourseItem.jsx - Allows users to edit an existing course.
+POST /api/courses - Create a new course
 
-Backend (Express) Controllers
+PUT /api/courses/:id - Update a course
 
-authController.js
-
-register - Registers a new user.
-
-login - Authenticates a user and returns a token. courseController.js
-
-createCourse - Adds a new course to the database.
-
-getCourses - Retrieves all courses.
-
-updateCourse - Updates an existing course.
-
-deleteCourse - Removes a course from the database.
-
-Backend Routes
-
-Auth Routes (/api/auth)
-
-POST /register - Registers a user.
-
-POST /login - Logs in a user.
-
-Course Routes (/api/courses)
-
-GET / - Fetches all courses.
-
-POST / - Creates a new course.
-
-PUT /:id - Updates an existing course.
-
-DELETE /:id - Deletes a course.
+DELETE /api/courses/:id - Delete a course
