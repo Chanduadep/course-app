@@ -1,8 +1,8 @@
-// src/components/courses/CourseItem.js
+
 import React, { useState } from 'react';
 import api from '../../../utils/api';
 
-const CourseItem = ({ course, onDelete }) => {
+const CourseItem = ({ course, onDelete, onUpdate }) => { 
   const [isEditing, setIsEditing] = useState(false);
   const [editData, setEditData] = useState({
     name: course.name,
@@ -21,9 +21,9 @@ const CourseItem = ({ course, onDelete }) => {
 
   const handleEdit = async () => {
     try {
-      await api.put(`/courses/${course._id}`, editData);
+      const response = await api.put(`/courses/${course._id}`, editData);
       setIsEditing(false);
-      // You might want to refresh the course list here
+      onUpdate(course._id, response.data); // Call onUpdate with updated course data
     } catch (err) {
       console.error('Failed to update course:', err);
     }

@@ -1,3 +1,5 @@
+
+
 import React, { useState } from 'react';
 import api from '../../../utils/api';
 
@@ -25,45 +27,45 @@ const CourseForm = ({ onCourseAdded }) => {
   };
 
   return (
-    <div className="mb-8 p-6 bg-white rounded-lg shadow-lg">
-      <h3 className="text-xl font-bold mb-4">Add New Course</h3>
-      {error && <div className="bg-red-100 text-red-700 p-3 rounded mb-4">{error}</div>}
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label className="block text-gray-700 mb-2">Course Name</label>
+    <div className="mb-4 p-4 bg-white rounded shadow max-w-md mx-auto">
+      <h3 className="text-lg font-semibold mb-2">Add Course</h3>
+      {error && <div className="bg-red-50 text-red-600 p-2 rounded text-sm mb-2">{error}</div>}
+      <form onSubmit={handleSubmit} className="space-y-2">
+        <div>
+          <label className="text-sm text-gray-600">Course Name</label>
           <input
             type="text"
             name="name"
             value={formData.name}
-            className="w-full p-2 border rounded"
+            className="w-full p-1.5 text-sm border rounded mt-1"
             onChange={handleChange}
             required
           />
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 mb-2">Description</label>
+        <div>
+          <label className="text-sm text-gray-600">Description</label>
           <textarea
             name="description"
             value={formData.description}
-            className="w-full p-2 border rounded"
+            className="w-full p-1.5 text-sm border rounded mt-1 h-20"
             onChange={handleChange}
             required
           />
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 mb-2">Instructor</label>
+        <div>
+          <label className="text-sm text-gray-600">Instructor</label>
           <input
             type="text"
             name="instructor"
             value={formData.instructor}
-            className="w-full p-2 border rounded"
+            className="w-full p-1.5 text-sm border rounded mt-1"
             onChange={handleChange}
             required
           />
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+          className="w-full bg-blue-500 text-white py-1.5 px-3 rounded text-sm hover:bg-blue-600 mt-2"
         >
           Add Course
         </button>

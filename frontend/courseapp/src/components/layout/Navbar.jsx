@@ -21,7 +21,10 @@ const Navbar = () => {
           {user ? (
             <>
               <Link to="/courses" className="text-white mx-4">
-                Courses
+                View Courses
+              </Link>
+              <Link to="/courses/add" className="text-white mx-4">
+                Add Course
               </Link>
               <button onClick={handleLogout} className="text-white">
                 Logout

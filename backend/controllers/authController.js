@@ -4,10 +4,7 @@ const dotenv=require('dotenv')
 
 dotenv.config()
 
-
-// controllers/authController.js
-
-// Register controller - just creates the user
+// Register controller -creates the user
 exports.register = async (req, res) => {
     try {
       const { name, email, password } = req.body;
@@ -17,7 +14,6 @@ exports.register = async (req, res) => {
       if (user) {
         return res.status(400).json({ message: 'User already exists' });
       }
-  
       // Create new user
       user = new User({ name, email, password });
       await user.save();
@@ -27,7 +23,7 @@ exports.register = async (req, res) => {
       res.status(500).json({ message: 'Server error', error: err.message });
     }
   };
-  
+
   // Login controller - generates JWT token
   exports.login = async (req, res) => {
     try {
@@ -36,13 +32,13 @@ exports.register = async (req, res) => {
       // Check if user exists
       const user = await User.findOne({ email });
       if (!user) {
-        return res.status(400).json({ message: 'Invalid credentials' });
+        return res.status(400).json({ message: 'User not found' });
       }
   
       // Verify password
       const isMatch = await user.comparePassword(password);
       if (!isMatch) {
-        return res.status(400).json({ message: 'Invalid credentials' });
+        return res.status(400).json({ message: 'Enter Correct Password' });
       }
   
       // Generate JWT token
